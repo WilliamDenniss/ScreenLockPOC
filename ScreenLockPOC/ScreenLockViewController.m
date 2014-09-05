@@ -135,6 +135,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kScreenLockViewControllerLogHistoryKey];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kScreenLockViewControllerLastDetectedKey];
 
+	[self updateUI];
 }
 
 
