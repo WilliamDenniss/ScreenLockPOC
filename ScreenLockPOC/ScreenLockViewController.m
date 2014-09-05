@@ -23,6 +23,12 @@
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationProtectedDataDidBecomeAvailable object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationProtectedDataWillBecomeUnavailable object:nil];
 
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationDidBecomeActiveNotification object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationWillResignActiveNotification object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationWillTerminateNotification object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationWillEnterForegroundNotification object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+
     }
     return self;
 }
@@ -37,20 +43,44 @@
 	if (notification.name == UIApplicationProtectedDataDidBecomeAvailable
 		|| notification.name == UIApplicationProtectedDataWillBecomeUnavailable)
 	{
-		NSString* note = [NSString stringWithFormat:@"Passcode Use Detected (%@ at %@)", notification.name, [NSDate date]];
-		NSLog(@"%@", note);
-		
+		NSString* note = [NSString stringWithFormat:@"Passcode Use Detected! [%@]", notification.name];
+		[self logMessage:note];
+	
 		msgLabel.text = @"Passcode Use Detected";
 		
 		AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
 	}
+	else
+	{
+		[self logMessage:notification.name];
+	}
+}
+
+- (void) logMessage:(NSString*)message
+{
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSCalendar *gregorian = [[NSCalendar alloc]  initWithCalendarIdentifier:NSGregorianCalendar];
+	[dateFormatter setCalendar:gregorian];
+	dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+	
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+	NSString* date = [dateFormatter stringFromDate:[NSDate date]];
+
+	NSString* note = [NSString stringWithFormat:@"%@: %@", date, message];
+
+	msgHistory.text = [NSString stringWithFormat:@"%@\n%@", note, msgHistory.text];
+	NSLog(@"%@", note);
 }
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	
+	msgHistory.text = @"";
+	[self logMessage:@"App Started"];
+
+	msgLabel.text = @"Not yet detected";
 }
 
 - (void)didReceiveMemoryWarning

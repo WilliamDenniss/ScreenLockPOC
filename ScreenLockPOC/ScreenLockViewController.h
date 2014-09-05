@@ -12,6 +12,7 @@
 
 	
 	IBOutlet UILabel* msgLabel;
+	IBOutlet UITextView* msgHistory;
 
 }
 
