@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BEF3BEDE19B98DD30071F48A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3BEDD19B98DD30071F48A /* Foundation.framework */; };
+		BEF3BEE019B98DD30071F48A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3BEDF19B98DD30071F48A /* CoreGraphics.framework */; };
+		BEF3BEE219B98DD30071F48A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3BEE119B98DD30071F48A /* UIKit.framework */; };
+		BEF3BEE819B98DD30071F48A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEF3BEE619B98DD30071F48A /* InfoPlist.strings */; };
+		BEF3BEEA19B98DD30071F48A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF3BEE919B98DD30071F48A /* main.m */; };
+		BEF3BEEE19B98DD30071F48A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF3BEED19B98DD30071F48A /* AppDelegate.m */; };
+		BEF3BEF919B98DD30071F48A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3BEF819B98DD30071F48A /* Images.xcassets */; };
+		BEF3BF0019B98DD30071F48A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3BEFF19B98DD30071F48A /* XCTest.framework */; };
+		BEF3BF0119B98DD30071F48A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3BEDD19B98DD30071F48A /* Foundation.framework */; };
+		BEF3BF0219B98DD30071F48A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3BEE119B98DD30071F48A /* UIKit.framework */; };
+		BEF3BF0A19B98DD30071F48A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEF3BF0819B98DD30071F48A /* InfoPlist.strings */; };
+		BEF3BF0C19B98DD30071F48A /* ScreenLockPOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF3BF0B19B98DD30071F48A /* ScreenLockPOCTests.m */; };
+		BEF3BF1819B98E5F0071F48A /* ScreenLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF3BF1619B98E5F0071F48A /* ScreenLockViewController.m */; };
+		BEF3BF1919B98E5F0071F48A /* ScreenLockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF3BF1719B98E5F0071F48A /* ScreenLockViewController.xib */; };
+		BEF3BF1B19B998450071F48A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3BF1A19B998450071F48A /* AudioToolbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEF3BF0319B98DD30071F48A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEF3BED219B98DD30071F48A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF3BED919B98DD30071F48A;
+			remoteInfo = ScreenLockPOC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BEF3BEDA19B98DD30071F48A /* ScreenLockPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenLockPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF3BEDD19B98DD30071F48A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BEF3BEDF19B98DD30071F48A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BEF3BEE119B98DD30071F48A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BEF3BEE519B98DD30071F48A /* ScreenLockPOC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScreenLockPOC-Info.plist"; sourceTree = "<group>"; };
+		BEF3BEE719B98DD30071F48A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEF3BEE919B98DD30071F48A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BEF3BEEB19B98DD30071F48A /* ScreenLockPOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScreenLockPOC-Prefix.pch"; sourceTree = "<group>"; };
+		BEF3BEEC19B98DD30071F48A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BEF3BEED19B98DD30071F48A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BEF3BEF819B98DD30071F48A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEF3BEFE19B98DD30071F48A /* ScreenLockPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenLockPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF3BEFF19B98DD30071F48A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BEF3BF0719B98DD30071F48A /* ScreenLockPOCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScreenLockPOCTests-Info.plist"; sourceTree = "<group>"; };
+		BEF3BF0919B98DD30071F48A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEF3BF0B19B98DD30071F48A /* ScreenLockPOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenLockPOCTests.m; sourceTree = "<group>"; };
+		BEF3BF1519B98E5F0071F48A /* ScreenLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenLockViewController.h; sourceTree = "<group>"; };
+		BEF3BF1619B98E5F0071F48A /* ScreenLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenLockViewController.m; sourceTree = "<group>"; };
+		BEF3BF1719B98E5F0071F48A /* ScreenLockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScreenLockViewController.xib; sourceTree = "<group>"; };
+		BEF3BF1A19B998450071F48A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEF3BED719B98DD30071F48A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF3BF1B19B998450071F48A /* AudioToolbox.framework in Frameworks */,
+				BEF3BEE019B98DD30071F48A /* CoreGraphics.framework in Frameworks */,
+				BEF3BEE219B98DD30071F48A /* UIKit.framework in Frameworks */,
+				BEF3BEDE19B98DD30071F48A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF3BEFB19B98DD30071F48A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF3BF0019B98DD30071F48A /* XCTest.framework in Frameworks */,
+				BEF3BF0219B98DD30071F48A /* UIKit.framework in Frameworks */,
+				BEF3BF0119B98DD30071F48A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BEF3BED119B98DD30071F48A = {
+			isa = PBXGroup;
+			children = (
+				BEF3BEE319B98DD30071F48A /* ScreenLockPOC */,
+				BEF3BF0519B98DD30071F48A /* ScreenLockPOCTests */,
+				BEF3BEDC19B98DD30071F48A /* Frameworks */,
+				BEF3BEDB19B98DD30071F48A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BEF3BEDB19B98DD30071F48A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEF3BEDA19B98DD30071F48A /* ScreenLockPOC.app */,
+				BEF3BEFE19B98DD30071F48A /* ScreenLockPOCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEF3BEDC19B98DD30071F48A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEF3BF1A19B998450071F48A /* AudioToolbox.framework */,
+				BEF3BEDD19B98DD30071F48A /* Foundation.framework */,
+				BEF3BEDF19B98DD30071F48A /* CoreGraphics.framework */,
+				BEF3BEE119B98DD30071F48A /* UIKit.framework */,
+				BEF3BEFF19B98DD30071F48A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEF3BEE319B98DD30071F48A /* ScreenLockPOC */ = {
+			isa = PBXGroup;
+			children = (
+				BEF3BEEC19B98DD30071F48A /* AppDelegate.h */,
+				BEF3BEED19B98DD30071F48A /* AppDelegate.m */,
+				BEF3BEF819B98DD30071F48A /* Images.xcassets */,
+				BEF3BEE419B98DD30071F48A /* Supporting Files */,
+				BEF3BF1519B98E5F0071F48A /* ScreenLockViewController.h */,
+				BEF3BF1619B98E5F0071F48A /* ScreenLockViewController.m */,
+				BEF3BF1719B98E5F0071F48A /* ScreenLockViewController.xib */,
+			);
+			path = ScreenLockPOC;
+			sourceTree = "<group>";
+		};
+		BEF3BEE419B98DD30071F48A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEF3BEE519B98DD30071F48A /* ScreenLockPOC-Info.plist */,
+				BEF3BEE619B98DD30071F48A /* InfoPlist.strings */,
+				BEF3BEE919B98DD30071F48A /* main.m */,
+				BEF3BEEB19B98DD30071F48A /* ScreenLockPOC-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEF3BF0519B98DD30071F48A /* ScreenLockPOCTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEF3BF0B19B98DD30071F48A /* ScreenLockPOCTests.m */,
+				BEF3BF0619B98DD30071F48A /* Supporting Files */,
+			);
+			path = ScreenLockPOCTests;
+			sourceTree = "<group>";
+		};
+		BEF3BF0619B98DD30071F48A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEF3BF0719B98DD30071F48A /* ScreenLockPOCTests-Info.plist */,
+				BEF3BF0819B98DD30071F48A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEF3BED919B98DD30071F48A /* ScreenLockPOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEF3BF0F19B98DD30071F48A /* Build configuration list for PBXNativeTarget "ScreenLockPOC" */;
+			buildPhases = (
+				BEF3BED619B98DD30071F48A /* Sources */,
+				BEF3BED719B98DD30071F48A /* Frameworks */,
+				BEF3BED819B98DD30071F48A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenLockPOC;
+			productName = ScreenLockPOC;
+			productReference = BEF3BEDA19B98DD30071F48A /* ScreenLockPOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BEF3BEFD19B98DD30071F48A /* ScreenLockPOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEF3BF1219B98DD30071F48A /* Build configuration list for PBXNativeTarget "ScreenLockPOCTests" */;
+			buildPhases = (
+				BEF3BEFA19B98DD30071F48A /* Sources */,
+				BEF3BEFB19B98DD30071F48A /* Frameworks */,
+				BEF3BEFC19B98DD30071F48A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEF3BF0419B98DD30071F48A /* PBXTargetDependency */,
+			);
+			name = ScreenLockPOCTests;
+			productName = ScreenLockPOCTests;
+			productReference = BEF3BEFE19B98DD30071F48A /* ScreenLockPOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEF3BED219B98DD30071F48A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "William Denniss";
+				TargetAttributes = {
+					BEF3BEFD19B98DD30071F48A = {
+						TestTargetID = BEF3BED919B98DD30071F48A;
+					};
+				};
+			};
+			buildConfigurationList = BEF3BED519B98DD30071F48A /* Build configuration list for PBXProject "ScreenLockPOC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BEF3BED119B98DD30071F48A;
+			productRefGroup = BEF3BEDB19B98DD30071F48A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEF3BED919B98DD30071F48A /* ScreenLockPOC */,
+				BEF3BEFD19B98DD30071F48A /* ScreenLockPOCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEF3BED819B98DD30071F48A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF3BF1919B98E5F0071F48A /* ScreenLockViewController.xib in Resources */,
+				BEF3BEF919B98DD30071F48A /* Images.xcassets in Resources */,
+				BEF3BEE819B98DD30071F48A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF3BEFC19B98DD30071F48A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF3BF0A19B98DD30071F48A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEF3BED619B98DD30071F48A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF3BF1819B98E5F0071F48A /* ScreenLockViewController.m in Sources */,
+				BEF3BEEE19B98DD30071F48A /* AppDelegate.m in Sources */,
+				BEF3BEEA19B98DD30071F48A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF3BEFA19B98DD30071F48A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF3BF0C19B98DD30071F48A /* ScreenLockPOCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEF3BF0419B98DD30071F48A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEF3BED919B98DD30071F48A /* ScreenLockPOC */;
+			targetProxy = BEF3BF0319B98DD30071F48A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEF3BEE619B98DD30071F48A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEF3BEE719B98DD30071F48A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BEF3BF0819B98DD30071F48A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEF3BF0919B98DD30071F48A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEF3BF0D19B98DD30071F48A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BEF3BF0E19B98DD30071F48A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEF3BF1019B98DD30071F48A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScreenLockPOC/ScreenLockPOC-Prefix.pch";
+				INFOPLIST_FILE = "ScreenLockPOC/ScreenLockPOC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BEF3BF1119B98DD30071F48A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScreenLockPOC/ScreenLockPOC-Prefix.pch";
+				INFOPLIST_FILE = "ScreenLockPOC/ScreenLockPOC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BEF3BF1319B98DD30071F48A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScreenLockPOC.app/ScreenLockPOC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScreenLockPOC/ScreenLockPOC-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ScreenLockPOCTests/ScreenLockPOCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BEF3BF1419B98DD30071F48A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScreenLockPOC.app/ScreenLockPOC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScreenLockPOC/ScreenLockPOC-Prefix.pch";
+				INFOPLIST_FILE = "ScreenLockPOCTests/ScreenLockPOCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEF3BED519B98DD30071F48A /* Build configuration list for PBXProject "ScreenLockPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEF3BF0D19B98DD30071F48A /* Debug */,
+				BEF3BF0E19B98DD30071F48A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEF3BF0F19B98DD30071F48A /* Build configuration list for PBXNativeTarget "ScreenLockPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEF3BF1019B98DD30071F48A /* Debug */,
+				BEF3BF1119B98DD30071F48A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BEF3BF1219B98DD30071F48A /* Build configuration list for PBXNativeTarget "ScreenLockPOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEF3BF1319B98DD30071F48A /* Debug */,
+				BEF3BF1419B98DD30071F48A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEF3BED219B98DD30071F48A /* Project object */;
+}
