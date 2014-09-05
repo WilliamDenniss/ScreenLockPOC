@@ -2,8 +2,7 @@
 //  ScreenLockPOCTests.m
 //  ScreenLockPOCTests
 //
-//  Created by William Denniss on 4/09/2014.
-//  Copyright (c) 2014 William Denniss. All rights reserved.
+//  Created by William Denniss on 2014-09-04.
 //
 
 #import <XCTest/XCTest.h>

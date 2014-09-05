@@ -2,8 +2,7 @@
 //  ScreenLockViewController.h
 //  ScreenLockPOC
 //
-//  Created by William Denniss on 4/09/2014.
-//  Copyright (c) 2014 William Denniss. All rights reserved.
+//  Created by William Denniss on 2014-09-04.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,7 +12,12 @@
 	
 	IBOutlet UILabel* msgLabel;
 	IBOutlet UITextView* msgHistory;
-
+	
+	NSMutableString* logHistory;
+	
+	NSTimer* updateTimer;
 }
+
+- (IBAction) clearHistory;
 
 @end

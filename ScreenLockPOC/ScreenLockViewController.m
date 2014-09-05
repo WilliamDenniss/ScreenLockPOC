@@ -3,12 +3,14 @@
 //  ScreenLockPOC
 //
 //  Created by William Denniss on 4/09/2014.
-//  Copyright (c) 2014 William Denniss. All rights reserved.
 //
 
 #import "ScreenLockViewController.h"
 
 #import <AudioToolbox/AudioServices.h>
+
+#define kScreenLockViewControllerLogHistoryKey @"history"
+#define kScreenLockViewControllerLastDetectedKey @"lastDetection"
 
 @interface ScreenLockViewController ()
 
@@ -20,6 +22,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+		
+		logHistory = [NSMutableString new];
+		
+		if ([[NSUserDefaults standardUserDefaults] stringForKey:kScreenLockViewControllerLogHistoryKey])
+		{
+			logHistory = [[[NSUserDefaults standardUserDefaults] stringForKey:kScreenLockViewControllerLogHistoryKey] mutableCopy];
+		}
+		
+		[self logMessage:@"------------- App Started"];
+
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationProtectedDataDidBecomeAvailable object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:UIApplicationProtectedDataWillBecomeUnavailable object:nil];
 
@@ -43,20 +55,53 @@
 	if (notification.name == UIApplicationProtectedDataDidBecomeAvailable
 		|| notification.name == UIApplicationProtectedDataWillBecomeUnavailable)
 	{
-		NSString* note = [NSString stringWithFormat:@"Passcode Use Detected! [%@]", notification.name];
+		NSString* note = [NSString stringWithFormat:@"%@ [Passcode Use Detected!]", notification.name];
 		[self logMessage:note];
-	
-		msgLabel.text = @"Passcode Use Detected";
 		
+		[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:kScreenLockViewControllerLastDetectedKey];
+
 		AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+		
+		[self updateUI];
 	}
 	else
 	{
-		[self logMessage:notification.name];
+		[self logMessage:[NSString stringWithFormat:@"%@", notification.name]];
 	}
 }
 
-- (void) logMessage:(NSString*)message
+- (void) updateUI
+{
+	NSDate* lastPasscodeDate = (NSDate*) [[NSUserDefaults standardUserDefaults] objectForKey:kScreenLockViewControllerLastDetectedKey];
+
+	if (lastPasscodeDate)
+	{
+		NSDateFormatter* dateFormatter = [self dateFormatter];
+		[dateFormatter setDateFormat:@"HH:mm:ss"];
+		NSString* dateString = [[self dateFormatter] stringFromDate:lastPasscodeDate];
+
+		if ([lastPasscodeDate earlierDate:[NSDate dateWithTimeIntervalSinceNow:-60*60]] == lastPasscodeDate)
+		{
+			msgLabel.text = [NSString stringWithFormat:@"Historical Passcode Use Detected\n (%@)", dateString];
+		}
+		else
+		{
+			NSTimeInterval since = fabs([lastPasscodeDate timeIntervalSinceNow]);
+			
+			msgLabel.text = [NSString stringWithFormat:@"Recent Passcode Use Detected!\n (%lds ago)", (long)since];
+		}
+	}
+	else
+	{
+		msgLabel.text = @"Not yet detected";
+	}
+
+	msgHistory.text = logHistory;
+	msgHistory.textContainer.lineBreakMode = NSLineBreakByCharWrapping;
+	
+}
+
+- (NSDateFormatter*) dateFormatter
 {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	NSCalendar *gregorian = [[NSCalendar alloc]  initWithCalendarIdentifier:NSGregorianCalendar];
@@ -64,12 +109,32 @@
 	dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
 	
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-	NSString* date = [dateFormatter stringFromDate:[NSDate date]];
+	return dateFormatter;
+}
+
+- (void) logMessage:(NSString*)message
+{
+	NSString* date = [[self dateFormatter] stringFromDate:[NSDate date]];
 
 	NSString* note = [NSString stringWithFormat:@"%@: %@", date, message];
 
-	msgHistory.text = [NSString stringWithFormat:@"%@\n%@", note, msgHistory.text];
+	[logHistory insertString:@"\n" atIndex:0];
+	[logHistory insertString:note atIndex:0];
+	
 	NSLog(@"%@", note);
+	
+	[[NSUserDefaults standardUserDefaults] setObject:msgHistory.text forKey:kScreenLockViewControllerLogHistoryKey];
+	
+	[self updateUI];
+}
+
+- (IBAction) clearHistory
+{
+	logHistory = [NSMutableString new];
+	[self logMessage:@"cleared."];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kScreenLockViewControllerLogHistoryKey];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kScreenLockViewControllerLastDetectedKey];
+
 }
 
 
@@ -77,10 +142,15 @@
 {
     [super viewDidLoad];
 	
-	msgHistory.text = @"";
-	[self logMessage:@"App Started"];
+	[self updateUI];
+	[updateTimer invalidate];
+	updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
+}
 
-	msgLabel.text = @"Not yet detected";
+- (void) viewDidUnload
+{
+	[updateTimer invalidate];
+	updateTimer = nil;
 }
 
 - (void)didReceiveMemoryWarning
